@@ -1,0 +1,11 @@
+body {
+}
+ header, section, footer, aside, nav, main, article, figure {
+     display: block;
+}
+ footer{
+     clear:both;
+}
+ 
+ .donate_btn{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F58214', endColorstr='#C42336', GradientType=0 ); }
+ 

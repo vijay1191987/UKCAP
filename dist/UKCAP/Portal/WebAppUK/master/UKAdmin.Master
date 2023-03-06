@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UKAdmin.master.cs" Inherits="CitizenPortal.WebAppUK.master.UKAdmin" %>
+
+<%@ Register Src="~/WebAppUK/controls/adminheader.ascx" TagPrefix="uc1" TagName="adminheader" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <title>Uttarakhand Common Portal</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="/WebAppUK/DashboardV3/js/jquery-2.2.3.min.js" type="text/javascript"></script>
+    <script src="/Scripts/angular.min.js" type="text/javascript"></script>
+    <script src="/WebAppUK/DashboardV3/js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="/WebAppUK/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="/WebAppUK/css/style.admin.css" type="text/css" rel="stylesheet" />
+    <link href="/WebAppUK/DashboardV3/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="/WebAppUK/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="/WebAppUK/css/reset.css" type="text/css" rel="stylesheet" />
+     <link href="/WebAppUK/DashboardV3/css/navpanel.css" type="text/css" rel="stylesheet" />
+    <link href="/WebAppUK/DashboardV3/css/dashboardstyle.css" type="text/css" rel="stylesheet" />
+    <%--For CSS & JS for Datepicker--%>
+    <script src="/WebAppUK/js/jquery-ui-1.11.4.min.js" type="text/javascript"></script>
+    <link href="/WebAppUK/css/jquery-ui.min.css" type="text/css" rel="stylesheet"/>
+    <%--For CSS & JS for Datepicker--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <asp:HiddenField ID="HFLang" runat="server" />
+    <div class="container-fluid">
+        <div id="throbber" style="display: none; min-height: 120px;"></div>
+            <div id="noty-holder"></div>
+         <div id="wrapper">
+        <uc1:adminheader runat="server" id="adminheader" />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+             </div>
+    </div>
+    </form>
+       <script src="/WebAppUK/DashboardV3/js/velocity.min.js" type="text/javascript"> </script>
+        <script src="/WebAppUK/DashboardV3/js/velocity.ui.min.js" type="text/javascript"></script>
+        <script src="/WebAppUK/DashboardV3/js/modaleffect.js" type="text/javascript"></script>
+</body>
+</html>

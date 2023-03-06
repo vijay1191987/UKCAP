@@ -1,0 +1,504 @@
+ @font-face {
+     font-family: OpenSans-Regular;
+     src: url(../fonts/OpenSans-Regular.ttf);
+}
+ @font-face {
+     font-family: OpenSans-Semibold;
+     src: url(../fonts/OpenSans-Semibold.ttf);
+}
+ @font-face {
+     font-family: OpenSans-Bold;
+     src: url(../fonts/OpenSans-Bold.ttf);
+}
+ body{
+     font-family: 'OpenSans-Regular', Helvetica, Arial, sans-serif; overflow-x: hidden;
+}
+ h4{
+     font-family: 'OpenSans-Semibold', Helvetica, Arial, sans-serif;
+}
+
+ /*Common CSS START Here*/
+ .p0{
+     padding:0 !important;
+}
+ .p5{
+     padding:5px !important;
+}
+ .p10{
+     padding:10px !important;
+}
+ .ptop0{
+     padding-top:0 !important;
+}
+ .ptop5{
+     padding-top:5px !important;
+}
+ .ptop10{
+     padding-top:10px !important;
+}
+ .ptop15{
+     padding-top:15px !important;
+}
+ .ptop20{
+     padding-top:20px !important;
+}
+ .pright0{
+     padding-right:0 !important;
+}
+ .pright5{
+     padding-right:5px !important;
+}
+ .pright10{
+     padding-right:10px !important;
+}
+ .pright15{
+     padding-right:15px !important;
+}
+ .pright20{
+     padding-right:20px !important;
+}
+ .pbtm0{
+     padding-bottom:0 !important;
+}
+ .pbtm5{
+     padding-bottom:5px !important;
+}
+ .pbtm10{
+     padding-bottom:10px !important;
+}
+ .pbtm15{
+     padding-bottom:15px !important;
+}
+ .pbtm20{
+     padding-bottom:20px !important;
+}
+ .pleft0{
+     padding-left:0 !important;
+}
+ .pleft5{
+     padding-left:5px !important;
+}
+ .pleft10{
+     padding-left:10px !important;
+}
+ .pleft15{
+     padding-left:15px !important;
+}
+ .pleft20{
+     padding-left:20px !important;
+}
+ .mtop0{
+     margin-top:0 !important;
+}
+ .mtop5{
+     margin-top:5px !important;
+}
+ .mtop10{
+     margin-top:10px !important;
+}
+ .mtop15{
+     margin-top:15px !important;
+}
+ .mtop20{
+     margin-top:20px !important;
+}
+ .mright0{
+     margin-right:0 !important;
+}
+ .mright5{
+     margin-right:5px !important;
+}
+ .mright10{
+     margin-right:10px !important;
+}
+ .mright15{
+     margin-right:15px !important;
+}
+ .mright20{
+     margin-right:20px !important;
+}
+ .mbtm0{
+     margin-bottom:0 !important;
+}
+ .mbtm5{
+     margin-bottom:5px !important;
+}
+ .mbtm10{
+     margin-bottom:10px !important;
+}
+ .mbtm15{
+     margin-bottom:15px !important;
+}
+ .mbtm20{
+     margin-bottom:20px !important;
+}
+ .mleft0{
+     margin-left:0 !important;
+}
+ .mleft5{
+     margin-left:5px !important;
+}
+ .mleft10{
+     margin-left:10px !important;
+}
+ .mleft15{
+     margin-left:15px !important;
+}
+ .mleft20{
+     margin-left:20px !important;
+}
+
+ #page-wrapper .container-fluid{
+     padding-right:0;
+     padding-left:0;
+ }
+
+.txt_white {
+    color:#fff;
+}
+/*Common CSS END Here*/
+
+ .nav:before{
+    opacity: .33;
+     background: #32468B;
+}
+ .new_leftnav>li>a{
+     color:#fff !important;
+}
+ .wlcmemsg{
+     display:block;
+     color:#BADCFF;
+     padding:10px 10px 5px;
+}
+ .usernmetxt{
+    display:block;
+     font-size:22px;
+     color:#fff;
+     padding:5px;
+}
+ .useremailid{
+    display:block;
+     color:#fff;
+     letter-spacing:0.05em;
+}
+ .userdtlbox{
+    float: left;
+     margin: 0 auto;
+     text-align: center;
+     width: 100%;
+     padding:5% 10px;
+}
+ .userdtlbox img{
+     text-align:center;
+     margin:0 auto;
+     display:block;
+}
+ .toppanel_box{
+     background-color:#293A76;
+}
+ .deptnametxt{
+     background:linear-gradient(#99FFB3,#B1D8FF) !important;
+     width:100%;
+     display:block;
+     font-size:15px;
+     text-align:center;
+     color:#333;
+     border:1px solid #62D8FF;
+     padding:12% 0;
+     margin:0 auto;
+     transition:all .2s;
+}
+ .deptnametxt:hover{
+    background:linear-gradient(#D9491A,#FD6532) !important;
+     border:1px solid #E04F1F;
+     color:#fff;
+}
+ .servicesholder {
+     width:100%;
+     background-color: #fff;
+     border: solid 1px #ddd;
+     color: #D94A1A;
+     margin: 2%;
+     float: left;
+     padding: 6%;
+     font-size: 18px;
+}
+ .serviceicon{
+     display:inline-block;
+}
+ .servicetxt{
+    display:inline-block;
+     font-size:14px;
+}
+ .deptservices_box{
+     background-color: #FA6230;
+     padding:2% 0;
+     width: 97.5%;
+     float: left;
+     margin: 0px 15px;
+}
+ .mtop10{
+     margin-top:10px;
+}
+ .style_prevu_kit:hover {
+    /* box-shadow: 2px 5px 28px #333;
+    */
+     z-index: 2;
+     -webkit-transition: all 200ms ease-in;
+     -webkit-transform: scale(1.1);
+     -ms-transition: all 200ms ease-in;
+     -ms-transform: scale(1.1);
+     -moz-transition: all 200ms ease-in;
+     -moz-transform: scale(1.1);
+     transition: all 200ms ease-in;
+     transform: scale(1.1);
+}
+ .servicelink_holder{
+     display: flex;
+     padding: 10px 10px 20px;
+}
+ .service_nametxt{
+     display:inline-flex;
+     width:31.33%;
+     max-width:336px;
+     vertical-align:top;
+     font-size:1.4em;
+     text-align:center;
+     border-top:1px solid #4a829f;
+     border-right:1px solid #4a829f;
+     border-bottom:1px solid #4a829f;
+     border-left:10px solid #4a829f;
+     color:#4a829f;
+     padding:13px 10px;
+     margin:10px;
+     -webkit-transition: all ease 0.8s;
+     -moz-transition: all ease 0.8s;
+     transition: all ease 0.8s;
+}
+ .service_nametxt:hover{
+     box-shadow: inset 336px 0 0 0 #4a829f;
+     color: #fff;
+}
+ .accordion-container{
+     position: relative;
+    /*max-width: 500px;
+    */
+     height: auto;
+     margin: 10px auto;
+}
+ .accordion-container > h2{
+     text-align: center;
+     color: #000;
+     padding-bottom: 5px;
+     margin-bottom: 20px;
+     padding-bottom: 15px;
+     border-bottom: 1px solid #ddd;
+}
+ .set{
+     position: relative;
+     width: 100%;
+     height: auto;
+     background-color: #f5f5f5;
+     margin-bottom:10px;
+}
+ .set > a{
+     display: block;
+     padding: 16px 15px;
+    /*margin:2px 2px 6px;
+    */
+     text-decoration: none;
+     background-color:#DDE2EC;
+     font-size: 1.4em;
+     color: #555;
+     font-family: 'OpenSans-Semibold', Helvetica, Arial, sans-serif;
+     border-bottom: 1px solid #ddd;
+     border-top-left-radius:3px;
+     border-top-right-radius:3px;
+     -webkit-transition:all 0.2s linear;
+     -moz-transition:all 0.2s linear;
+     transition:all 0.2s linear;
+}
+ .set > a i{
+     float: right;
+     margin-top: 2px;
+}
+ .set > a.active{
+     background-color:#3399cc;
+     color: #fff;
+}
+ .content{
+     background-color: #E4E9F1;
+     border: 1px solid #DDE2EC;
+     display:none;
+     padding:15px 10px;
+}
+ .content p{
+     padding: 10px 15px;
+     margin: 0;
+     color: #333;
+}
+
+.instruction_txt {
+    font-family: OpenSans-Regular;
+    font-size:1.4em;
+    line-height:28px;
+    max-height:350px;
+    height:auto;
+    overflow-y:scroll;
+}
+
+
+/*CSS for check box*/
+/* The mychckbx */
+.mychckbx {
+    display: inline-block;
+    position: relative;
+    vertical-align:top;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.mychckbx input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 2px solid #dbdbdb;
+    background-color: transparent;
+}
+
+/* On mouse-over, add a grey background color */
+.mychckbx:hover input ~ .checkmark {
+    /*background-color: #ccc;*/
+}
+
+/* When the checkbox is checked, add a blue background */
+.mychckbx input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.mychckbx input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.mychckbx .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+
+ @media only screen and (min-width: 320px) and (max-width: 480px) {
+     .service_nametxt{
+         width:100%;
+    }
+     #wrapper{
+         padding-top:60%;
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* Name: Uttarakhand Common Application Portal Description: Designed & Coded by Bunty Verma Version: CSS 3.0 Author: Bunty Verma */

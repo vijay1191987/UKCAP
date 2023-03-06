@@ -1,0 +1,122 @@
+﻿body {
+}
+
+.tble-mainhd {
+    font-size: 1.4em;
+    background-color: #515774;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 8px;
+}
+
+.tble-subhd {
+    font-family: 'SourceSansPro-Semibold', Helvetica, Arial, sans-serif;
+    border: 2px solid #CDCDCD;
+    background-color: #e9e9e9;
+    color: #222;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px;
+}
+
+.tble-maintxt {
+    font-family: 'SourceSansPro-Regular', Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    border: 2px solid #CDCDCD;
+    line-height: 14px;
+    height: 37px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px 0px 2px;
+}
+
+.mrng {
+    background-color: #E9ECEF !important;
+}
+
+.evng {
+    background-color: #EDE8E7 !important;
+}
+
+.jeep-holder {
+    max-width: 84px;
+    margin: 0 auto;
+}
+
+.jeep-count {
+    font-family: 'SourceSansPro-Bold', Helvetica, Arial, sans-serif;
+    background-color: #7CB342;
+    color: #fff;
+    height: 24px;
+    padding: 5px 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.avail-jeep {
+    /* display: inline-flex; */
+    background-color: #9CCC65;
+    width: 50px;
+    line-height: 22px;
+    height: 24px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.userinfo {
+    border-collapse: collapse;
+    font-size: 1em;
+    width: 100%;
+}
+
+.userinfo td {
+    background-color: #fff;
+    padding: 6px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.userinfo .hd {
+    font-family: 'SourceSansPro-Semibold', Helvetica, Arial, sans-serif;
+}
+
+.userinfo .title {
+    font-family: 'SourceSansPro-Bold', Helvetica, Arial, sans-serif;
+    background-color: #515774;
+    font-size:1.4em;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    padding: 8px 8px;
+}
+
+.tourist-tble .title {
+    font-family: 'SourceSansPro-Bold', Helvetica, Arial, sans-serif;
+    background-color: #515774;
+    font-size:1.3em;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    padding: 8px 8px;
+}
+
+.confirm-userhd {
+    font-family: 'SourceSansPro-Semibold', Helvetica, Arial, sans-serif;
+    border: 1px solid #CDCDCD;
+    background-color: #5C5254 !important;
+    color: #fff !important;
+    font-weight: bold;
+    text-align: center !important;
+    vertical-align: middle;
+    padding: 8px !important;
+}
+
+.tourist-tble td {
+    background-color: #e9e9e9;
+    padding: 3px;
+    border: 1px solid #CDCDCD;
+    text-align: center;
+}

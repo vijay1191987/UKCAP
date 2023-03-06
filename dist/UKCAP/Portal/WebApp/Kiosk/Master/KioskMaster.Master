@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="KioskMaster.master.cs" Inherits="CitizenPortal.WebApp.Kiosk.Master.KioskMaster" ClientIDMode="Static" %>
+
+<%@ Register Src="~/WebApp/Control/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/WebApp/Control/LeftPanel.ascx" TagPrefix="uc1" TagName="LeftPanel" %>
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="../../../Scripts/jquery-2.2.3.min.js"></script>
+    <script src="../../../Scripts/angular.min.js"></script>
+    <link href="/g2c/css/font-awesome.min.css" rel="stylesheet" />
+    <!--<link href="../../Styles/bootstrap.min.css" rel="stylesheet" />-->
+    <%--<link href="../../Styles/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />--%>
+    <%--<link href="../../Styles/style.admin.css" rel="stylesheet" />
+    <link href="../../bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Styles/StyleSheet1.css" rel="stylesheet" />--%>
+    <link href="../../Styles/timeline.css" rel="stylesheet" />
+    <link href="../../Styles/StyleSheet1.css" rel="stylesheet" />
+    <link href="../../Styles/StyleSheet3.css" rel="stylesheet" />
+    <link href="../../Styles/StyleSheet4.css" rel="stylesheet" />
+    <link href="../../Styles/style.admin.css" rel="stylesheet" />
+    <%--<link href="../../Styles/bootstrap.min.css" rel="stylesheet" />--%>
+    <link href="../../Styles/sb-admin-2.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .form-heading {
+            text-transform: none !important;
+        }
+        .form-heading {
+            color: #820000;
+            text-align: left;
+            border-left: 15px solid #ce6d07;
+            border-right: 2px solid #ce6d07;
+            border-top: 1px solid #d8d8d8;
+            border-bottom: 1px solid #d8d8d8;
+            background: rgba(0, 0, 0, .075);
+            padding: 10px 20px 10px 15px;
+            border-top-right-radius: 2px;
+            border-top-left-radius: 2px;            
+            font-weight: bold;
+        }
+    </style>
+
+    <script type="text/javascript">
+        //(function (global) {
+
+        //    if (typeof (global) === "undefined") {
+        //        throw new Error("window is undefined");
+        //    }
+
+        //    var _hash = "!";
+        //    var noBackPlease = function () {
+        //        global.location.href += "#";
+
+        //        // making sure we have the fruit available for juice....
+        //        // 50 milliseconds for just once do not cost much (^__^)
+        //        global.setTimeout(function () {
+        //            global.location.href += "!";
+        //        }, 50);
+        //    };
+
+        //    // Earlier we had setInerval here....
+        //    global.onhashchange = function () {
+        //        if (global.location.hash !== _hash) {
+        //            global.location.hash = _hash;
+        //        }
+        //    };
+
+        //    global.onload = function () {
+
+        //        noBackPlease();
+
+        //        // disables backspace on page except on input fields and textarea..
+        //        document.body.onkeydown = function (e) {
+        //            var elm = e.target.nodeName.toLowerCase();
+        //            if (e.which === 8 && (elm !== 'input' && elm !== 'textarea')) {
+        //                e.preventDefault();
+        //            }
+        //            // stopping event bubbling up the DOM tree..
+        //            e.stopPropagation();
+        //        };
+
+        //    };
+
+        //})(window);
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:HiddenField ID="HFLang" runat="server" />
+
+        <uc1:Header runat="server" ID="Header" />
+        <uc1:LeftPanel runat="server" ID="LeftPanel" />
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <script src="../../Common/Scripts/bootstrap.min.js"></script>
+            <script src="../../Common/Scripts/metisMenu.js"></script>
+            <script src="../../Common/Scripts/raphael.js"></script>
+            <script src="../../Common/Scripts/morris.js"></script>
+            <script src="../../Common/Scripts/sb-admin-2.js"></script>
+            <script>
+                if (document.getElementById("intrnlContent") != null) {
+                    angular.bootstrap(document.getElementById("intrnlContent"), ['appmodule']);
+                }
+            </script>
+        </div>
+    </form>
+</body>
+</html>

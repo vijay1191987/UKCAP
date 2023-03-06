@@ -1,0 +1,520 @@
+﻿@model CitizenPortalLib.PortalViewModel.LoginModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/WebAppUK/HomeV3/js/jquery-2.2.3.min.js"></script>
+<script src="~/WebAppUK/HomeV3/js/bootstrap.min.js"></script>
+@*<link href="~/WebAppUK/css/newhomepage.css" rel="stylesheet" />*@
+<link href="~/WebAppUK/HomeV3/css/homestyle.css" rel="stylesheet" />
+<script type="text/javascript">
+    function DisableHistory() {
+        window.history.forward(1);
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#showLogin').hide();
+        $("#rgstrUser").click(function () {
+            $("#showLogin").show();
+            $("#allUserType").hide();
+        });
+        $("#backtopage").click(function () {
+            $("#showLogin").hide();
+            $("#allUserType").show();
+        });
+
+        //var t_ID = GetParamValue();
+        //debugger;
+        //if (t_ID !=undefined) {
+        //    DispLoginPanel(t_ID);
+        //}
+    });
+    //function GetParamValue() {
+    //    var qrStr = window.location.search;
+    //    qrStr = qrStr.split("?")[1].split("=")[1];
+    //    return qrStr;
+    //}
+</script>
+@*@Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Portal/css")*@
+<style type="text/css">
+    body {
+        /*background-image: url('/WebApp/Kiosk/Images/Lingaraj-Temple-New.jpg');*/
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+
+    hr {
+        margin: 0;
+        padding: 0;
+        clear: both;
+        border: none;
+    }
+
+    #container_lgn {
+        /*width: 512px;*/
+        background-image: url(/WebAppUK/HomeV3/img/header_bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 140px 0;
+    }
+
+    #btnlogin {
+        background-color: #ff9800 !important;
+        border: 1px solid #EC8D00;
+        font-size: 15px;
+    }
+
+    .mleft40 {
+        margin-left: 50px !important;
+    }
+
+    .login-wrapper {
+        width: 550px;
+        margin: 0 auto;
+    }
+
+    .rbt-grp {
+        padding-left: 0;
+    }
+
+    .text-align-center {
+        text-align: center;
+    }
+
+    .Ltitle {
+        font-weight: bolder;
+        color: rgb(233, 84, 0);
+    }
+
+    .sub-title {
+        color: rgb(0, 62, 0);
+        margin: 2px;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .sub-sub-title {
+        color: rgb(0, 29, 0);
+        margin-bottom: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        letter-spacing: 1.2px;
+    }
+
+    .btm_logo {
+        width: auto !important;
+        text-align: right;
+    }
+
+    input {
+        background: #fff;
+        line-height: 32px !important;
+        border: 1px solid #c4c4c4;
+        padding: 0 7px;
+        padding: 0 8px 0 8px;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    }
+
+    .box-container > .box-body {
+        background-color: rgba(252, 252, 252, 0.89) !important;
+    }
+
+
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 14px;
+        padding: 12px 3px;
+        width: 100%;
+        /*min-height:48px;*/
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px 5px 20px 5px;
+        -webkit-box-shadow: -1px 6px 10px 0px rgba(50, 50, 50, 0.25);
+        -moz-box-shadow: -1px 6px 10px 0px rgba(50, 50, 50, 0.25);
+        box-shadow: -1px 6px 10px 0px rgba(50, 50, 50, 0.25);
+    }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+            .button span:after {
+                content: '>>';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+    /*#home {
+        color: #fff;
+        margin-top: 10px;
+        display: inline-block;
+        padding-right: 50px;
+    }*/
+</style>
+<link href="~/WebAppUK/HomeV3/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/md5.js" type="text/javascript"></script>
+<body>
+    <form id="loginForm" action='@Url.Action("Login")' autocomplete="off" method="post">
+        @*Start Header*@
+        <header>
+            <div class="innerheader_bg">
+                <div class="tophead_container">
+                    <div class="tophead">
+                        <div class="col-xs-12 col-sm-7 col-md-6 col-lg-6">
+                            <div class="row toplink">
+                                <a href="#skiptocontent">Skip to Main Content</a> | <a href="#skipnav">Skip to Navigation</a> <span class="dcrsefnt"><a href="#" class="fntadjust" id="decreasetxt">A-</a></span>
+                                <span class="nrmlfnt" style=""><a href="#" class="fntadjust" id="normaltxt">A</a></span>
+                                <span class="incrsefnt"><a href="#" class="fntadjust" id="increasetxt">A+</a></span>
+                            </div>
+                            <div class="row">
+                                <div class="inline-block">
+                                    <img src="/WebAppUK/HomeV3/img/uttarakhand_logo.png" alt="" class="img-responsive" style="width: 85px;" />
+                                </div>
+                                <div class="inline-block logo_txt">
+                                    UTTARAKHAND
+                                    <span>(COMMON APPLICATION PORTAL)</span>
+                                    <span>(An initiative of Uttarakhand Govt.)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-5 col-md-6 col-lg-6">
+                            @*<div class="row top_loginbtn">
+                                <a href="/Account/Login" class="login_btn"><i class="fa fa-unlock-alt fa-fw"></i>LOGIN</a>
+                                <a href="/Account/Login" class="cscconnect_btn"><i class="fa fa-user fa-fw"></i>CSC LOGIN</a>
+                                                        </div>*@
+                            <div class="row">
+                                <div class="cm_box">
+                                    <div class="inline-block cm_txt"><span class="cm_designation">Hon’ble Chief Minister </span><span class="cm_name">Shri Trivendra Singh Rawat</span></div>
+                                    <div class="inline-block">
+                                        <img src="/WebAppUK/HomeV3/img/uttarakhand_cm.png" class="img-responsive" alt="Shri Trivendra Singh Rawat" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="topnavigation">
+                        <div class="dsplt_tble" style="text-align: center; margin: 0 auto;">
+                            <nav class="navbar navbar-static-top mbtm0">
+                                <div class="navbar-header">
+                                    <span class="menu_txtvsble">MENU</span>
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <!--<a class="navbar-brand" href="#"></a>-->
+                                </div>
+                                <div id="navbar" class="navbar-collapse rspnsvenav collapse" aria-expanded="false" style="height: 1px;">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="/WebAppUK/HomeV3/index.aspx" id="home" class="active"><span class="topnav_icon home_icon"></span>Home</a></li>
+                                        <li><a href="/WebAppUK/whos_who.aspx"><span class="topnav_icon whos_icon"></span>Who's Who</a></li>
+                                        <li><a href="/WebAppUK/state_profile.aspx"><span class="topnav_icon stateprofile_icon"></span>State Profile</a></li>
+                                        <li><a href="/WebAppUK/apex_bodies.aspx"><span class="topnav_icon apexbodies_icon"></span>Apex Bodies</a></li>
+                                        <li><a href="/WebAppUK/divisions_mandal.aspx"><span class="topnav_icon division_icon"></span>Divisions</a></li>
+                                        <li><a href="/WebAppUK/districts_administration.aspx"><span class="topnav_icon district_icon"></span>Districts</a></li>
+                                        <li><a href="/WebAppUK/acts.aspx"><span class="topnav_icon act_icon"></span>Acts</a></li>
+                                        <li><a href="/WebAppUK/goi_websites.aspx"><span class="topnav_icon goi_icon"></span>GOI Websites</a></li>
+                                        <li><a href="/WebAppUK/CustomError.aspx"><span class="topnav_icon grivance_icon"></span>Online Grievance</a></li>
+                                        <li><a href="/Account/Login" style="background-color: #D30201;"><span class="topnav_icon login_icon"></span>Login</a></li>
+                                    </ul>
+                                </div>
+                                <!--/.nav-collapse -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        @*End Header*@
+
+        @*Start Middle Content*@
+        <section>
+            <div class="" id="container_lgn">
+                <div class="">
+                    <div class="login-wrapper box-container" id="allUserType">
+                        <div class="box-heading">
+                            <h4 class="box-title">
+                                <i class="fa fa-sign-in fa-fw"></i> SELECT LOGIN TYPE
+                            </h4>
+                        </div>
+                        <div class="box-body box-body-open" style="padding: 40px 5px;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                @*<a href="~/WebApp/Registration/CitizenRegistration.aspx?SvcID=995" class="btn-success button"><i class="fa fa-user fa-3x fa-fw pbottom5"></i><br />New User Registration (Citizen)</a>*@
+                                <a href="~/WebApp/Registration/CitizenRegistration.aspx" class="btn-success button"><i class="fa fa-user fa-3x fa-fw pbottom5"></i><br />New User Registration (Citizen)</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                <a href="#" onclick="return DispLoginPanel('C');" class="btn-info button" id="rgstrUser"><i class="fa fa-group fa-3x fa-fw pbottom5"></i><br />Registered User (Citizen)</a>
+                            </div>
+                            <div class="mtop40"></div>
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                <a href="#" onclick="return DispLoginPanel('D');" class="btn-warning button"><i class="fa fa-university fa-3x fa-fw pbottom5"></i><br />Department Login</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                <a id="btncscConnect" name="CSCsubmit" class="btn-primary button">
+                                    <img src="~/WebAppUK/img/csc_person_icon.png" />@*<i class="fa fa-wheelchair fa-3x fa-fw pbottom5"></i>*@<br /><input type="submit" id="btnCSC" name="CSCsubmit" style="display:none;" class="fa fa-wheelchair fa-3x fa-fw pbottom5" value="Login with Digital Seva Connect" />Login with Digital Seva Connect
+                                </a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="login-wrapper box-container" id="showLogin" style="margin-bottom:30px;">
+                        <div class="box-heading">
+                            @Html.AntiForgeryToken()
+                            @*@Html.HiddenFor(model => model.SaltKeyValue, new { @id = "hdnsaltkey" })*@
+                            <input type="hidden" value="@ViewBag.SaltKeyValue" id="hdnsaltkey" />
+                            <input type="hidden" value="@ViewBag.SaltKeyValue" id="hdrandomSeed" />
+                            <input type="hidden" id="hdrDigitalSeva" />
+                            <h4 class="box-title">
+                                <i class="fa fa-sign-in fa-fw"></i>   LOGIN
+                            </h4>
+                        </div>
+                        <div class="box-body box-body-open" style="background-color:#fff !important;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="divDec">
+                                @if (ViewData["errMessage"] != null && ViewData["errMessage"].ToString() != "")
+                                {
+                                    <div id="divMsg" class="col-sm-12 col-md-12 col-lg-12 error form-group has-error alert alert-danger">
+                                        <label id="errormsg" class="control-label">
+                                            @Html.Encode(ViewData["errMessage"].ToString())
+                                        </label>
+                                    </div>
+                                }
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p10">
+                                <div class="form-group">
+                                    <label class="manadatory col-lg-3 rbt-grp" for="lblUserType" style="padding-left:0;">User Type</label>
+                                    <label class="col-lg-9" for="rbtYes" style="padding:0;">
+                                        <input type="radio" ID="UserType" name="UserType" value="Citizen" class="mleft40" />Citizen
+                                        <input type="radio" ID="UserType" name="UserType" value="Kiosk" required /> CSC<br />
+                                        <input type="radio" ID="UserType" name="UserType" value="G2G" class="mleft40" />Department
+                                    </label>
+                                </div>
+                                <br />
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label class="manadatory" for="UserName">Login ID</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter User Login ID" name="LoginID" id="LoginID" maxlength="30" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label class="manadatory" for="Password">Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input type="password" class="form-control" placeholder="Enter Password" name="Password" id="Password" maxlength="20" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <label class="manadatory" for="Village">Verification Code</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                <div>
+                                    <input type="text" class="form-control" placeholder="Enter Verification Code" name="captcha" id="captcha" maxlength="6" />
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 pull-right">
+                                <div>
+                                    <img src='@Url.Action("GetCaptcha")' alt="verification code" class=".gov.inform-control" />
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 mtop15">
+                                <input type="submit" id="btnlogin" name="CSCsubmit" class="btn btn-info" value="LOGIN" onclick="javascript: return submitForm()" />
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 mtop15">
+                                <input type="button" id="backtopage" value="Back to Page" class="btn btn-default pull-right" />
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="mtop15"></div>
+
+                            <div class="col-lg-6 mbtm10">
+                                <a class="btn-link frdgetPwd" href='~/WebApp/Login/NewForgetPassword.aspx'>Forgot Login ID/Password?</a>
+                            </div>
+                            <br />
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </section>
+        @*End Middle Content*@
+
+        @*Start Footer*@
+        <footer>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bottom_nav">
+                <ul>
+                    <li><a href="/WebAppUK/disclaimer.aspx">Disclaimer and Policies</a></li>
+                    <li><a href="/WebAppUK/CustomError.aspx">Sitemap</a></li>
+                    <li><a href="/WebAppUK/help.aspx">Help</a></li>
+                    <li><a href="/WebAppUK/terms_conditions.aspx">Terms and Conditions </a></li>
+                    <li><a href="/WebAppUK/contact_us.aspx">Contact</a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <div class="total_visitor"><span class="visitor_txt">TOTAL VISITORS</span><span class="visitor_count">14872</span></div>
+                <div class="today_visitor"><span class="visitor_txt">TODAY VISITORS</span><span class="visitor_count">264</span></div>
+                <div class="col-lg-12 text-center wthree-social">
+                    <ul>
+                        <li class="w3_facebook"><a onclick="window.open('https://www.facebook.com/UttarakhandDIPR');" href=""><i class="fa fa-facebook"></i>Facebook</a></li>
+                        <li class="w3_twitter"><a onclick="window.open('https://twitter.com/Dipr_uk');" href=""><i class="fa fa-twitter"></i>Twitter </a></li>
+                        <li class="w3_dribbble"><a onclick="window.open('https://www.youtube.com/channel/UCmpGVCWt-yGZHI5LTzNhsDQ');" href=""><i class="fa fa-youtube"></i>Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <p class="ptop15" style="color:#fff;">© All rights reserved CSC, SPV.</p>
+            </div>
+
+        </footer>
+        @*End Footer*@
+
+        @*@Html.Partial("~/Areas/Portal/Views/Shared/_CitizenRegistration.cshtml")*@
+
+        <div class="clearfix"></div>
+
+        <script src="~/g2c/js/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#btncscConnect").on("click", function (e) {
+                    $('#btnCSC').trigger('submit');
+                    $("#loginForm").submit();
+                });
+            });
+            $('body').keypress(function (e) {
+                if (e.which === 13) {
+                    e.preventDefault();
+                    //  alert('hi');
+                    $("input[value='Login']").trigger('click');
+                }
+            });
+
+            function md5auth(seed) {
+                var password1 = $('#Password');
+                var password = password1.val();
+                var hash = calcMD5(seed + calcMD5(password).toUpperCase());
+                password1.val(hash.toUpperCase());
+                return true;
+            }
+
+            function submitForm() {
+                var UserName = document.getElementById("LoginID");
+                var Pass = document.getElementById("Password");
+                var Captcha = document.getElementById("captcha");
+                var skv = document.getElementById("hdnsaltkey");
+                var r = document.getElementsByName("UserType");
+                var c = -1;
+
+                for (var i = 0; i < r.length; i++) {
+                    if (r[i].checked) {
+                        c = i;
+                    }
+                }
+                if (c == -1) {
+                    alert("* Please select User Type.");
+                    return false;
+                }
+
+                if (UserName.value == null || UserName.value == "") {
+                    alert("* Please enter the Login Id.");
+                    return false;
+                }
+
+                if (Pass.value == null || Pass.value == "") {
+                    alert("* Please enter the Password.");
+                    return false;
+                }
+                if (Captcha.value == null || Captcha.value == "") {
+                    alert("* Please enter the Verification Code.");
+                    return false;
+                }
+
+                var strhiden = calcMD5($('#hdrandomSeed').val());
+                var pwd1 = $('#Password').val();
+                var pwd1 = pwd1;
+                pwd1 = calcMD5(pwd1);
+
+                var encipt1 = calcMD5(pwd1 + strhiden);
+                //document.getElementById("txt_pass").maxLength = encipt1.length;
+                //document.getElementById("txt_pass").value = encipt1;
+                $('#Password').val(encipt1);
+
+                $('#hdrDigitalSevaDigitalSeva').val("0");
+
+
+                return true;
+            }
+
+            function RedirectToDigitalSeva() {
+                $('#hdrDigitalSeva').val("1");
+            }
+
+            function DispLoginPanel(Type) {
+
+                $('#allUserType').hide();
+                $('#showLogin').show();
+
+                if (Type == "C") {
+                    $("input[name='UserType'][value='Citizen']").prop("checked", true);
+
+                }
+
+                if (Type == "D") {
+                    $("input[name='UserType'][value='G2G']").prop("checked", true);
+
+                }
+                if (Type == "CSC") {
+
+                }
+
+            }
+        </script>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        @*<script src="~/g2c/js/jquery.min.js" type="text/javascript"></script>*@
+        <script>window.jQuery || document.write('<script src="~/g2c/js/jquery.min.js" type="text/javascript"><\/script>')</script>
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="~/g2c/js/ie10-viewport-bug-workaround.js" type="text/javascript"></script>
+
+    </form>
+</body>
